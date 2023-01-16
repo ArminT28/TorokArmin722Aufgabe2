@@ -24,16 +24,16 @@ public class ZutatRepository {
         alleZutaten.add(zutat);
     }
 
-    public void delete(Zutat zutat)
+    public void delete(String zutatName)
     {
-        alleZutaten.remove(zutat);
+        alleZutaten.remove(zutatName);
     }
 
-    public void update(Zutat oldZutat,Zutat newZutat)
+    public void update(String oldZutatName,Zutat newZutat)
     {
         for(var zutat:this.alleZutaten)
         {
-            if(zutat.equals(oldZutat)) {
+            if(zutat.getName().equals(oldZutatName)) {
                 zutat=newZutat;
             }
         }

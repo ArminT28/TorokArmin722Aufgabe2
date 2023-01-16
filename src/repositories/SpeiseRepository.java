@@ -25,16 +25,16 @@ public class SpeiseRepository {
         alleSpeisen.add(speise);
     }
 
-    public void delete(Speise speise)
+    public void delete(String speiseName)
     {
-        alleSpeisen.remove(speise);
+        alleSpeisen.remove(speiseName);
     }
 
-    public void update(Speise oldSpeise,Speise newSpeise)
+    public void update(int oldSpeiseId,Speise newSpeise)
     {
         for(var speise:this.alleSpeisen)
         {
-            if(speise.equals(oldSpeise)) {
+            if(speise.getId()==oldSpeiseId) {
                 speise=newSpeise;
             }
         }

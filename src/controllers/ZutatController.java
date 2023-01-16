@@ -26,14 +26,14 @@ public class ZutatController {
         zutatRepository.add(newZutat);
     }
 
-    public void deleteZutat(Zutat zutat)
+    public void deleteZutat(String zutatName)
     {
-        zutatRepository.delete(zutat);
+        zutatRepository.delete(zutatName);
     }
 
-    public void updateZutat(Zutat oldZutat,Zutat newZutat)
+    public void updateZutat(String oldZutatName,Zutat newZutat)
     {
-        zutatRepository.update(oldZutat,newZutat);
+        zutatRepository.update(oldZutatName,newZutat);
     }
 
     public List<Zutat> getZutatenNachMenge(int menge)

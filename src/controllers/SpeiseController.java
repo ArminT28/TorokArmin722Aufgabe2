@@ -31,14 +31,14 @@ public class SpeiseController {
         speiseRepository.add(newZutat);
     }
 
-    public void deleteSpeise(Speise zutat)
+    public void deleteSpeise(String speiseName)
     {
-        speiseRepository.delete(zutat);
+        speiseRepository.delete(speiseName);
     }
 
-    public void updateSpeise(Speise oldZutat,Speise newZutat)
+    public void updateSpeise(int oldZutatId,Speise newZutat)
     {
-        speiseRepository.update(oldZutat,newZutat);
+        speiseRepository.update(oldZutatId,newZutat);
     }
 
     public List<Speise> getSpeiseThatContainZutat(Zutat searchedZutat)
