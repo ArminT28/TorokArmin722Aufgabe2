@@ -3,6 +3,9 @@ package controllers;
 import models.Zutat;
 import repositories.ZutatRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ZutatController {
     private ZutatRepository zutatRepository;
 
@@ -31,5 +34,17 @@ public class ZutatController {
     public void updateZutat(Zutat oldZutat,Zutat newZutat)
     {
         zutatRepository.update(oldZutat,newZutat);
+    }
+
+    public List<Zutat> getZutatenNachMenge(int menge)
+    {
+        var alleZutaten = zutatRepository.getAlleZutaten();
+        var guteZutaten = new ArrayList<Zutat>();
+        for(var singleZutat:alleZutaten)
+        {
+            if(singleZutat.getMenge()==menge)
+                guteZutaten.add(singleZutat);
+        }
+        return guteZutaten;
     }
 }
