@@ -84,6 +84,13 @@ public class MainView {
                 startup();
                 break;
             }
+            case 8:
+            {
+                String zutatName = sc.next();
+                int zutatPreis = sc.nextInt();
+                int zutatMenge = sc.nextInt();
+                System.out.println(speiseController.getSpeiseThatContainZutat(new Zutat(zutatName,zutatPreis,zutatMenge)));
+            }
             case 9:
             {
                 var speisen = speiseController.getGesamtbetragFurHerstelungDerSpeise();
