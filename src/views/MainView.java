@@ -55,7 +55,11 @@ public class MainView {
             }
             case 3:
             {
-                break;
+                String oldzutatName = sc.next();
+                String newzutatName = sc.next();
+                int newzutatPreis = sc.nextInt();
+                int newzutatMenge = sc.nextInt();
+                zutatController.updateZutat(oldzutatName,new Zutat(newzutatName,newzutatPreis,newzutatMenge));
             }
             case 4:
             {
@@ -75,7 +79,11 @@ public class MainView {
             }
             case 6:
             {
-                break;
+                int oldSpeiseId = sc.nextInt();
+                String speiseName = sc.next();
+                int speiseId = sc.nextInt();
+                List<Zutat> listeDerZutaten = new ArrayList<>();
+                speiseController.updateSpeise(oldSpeiseId,new Speise(speiseId,speiseName,listeDerZutaten));
             }
             case 7:
             {
